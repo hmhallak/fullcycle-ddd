@@ -108,8 +108,6 @@ describe('Customer repository test', () => {
     customer1.Address = address1;
     customer1.addRewardPoints(10);
     customer1.activate();
-
-    console.log({ address1: customer1.Address })
     
     const customer2 = new Customer("2", "Customer 2");
     const address2 = new Address("Street 2", 2, "Zip 2", "City 2");
