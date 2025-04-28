@@ -52,4 +52,14 @@ export default class Order {
   total(): number {
     return this._items.reduce((total, item) => total + item.orderItemTotal(), 0)
   }
+
+  addItem(item: OrderItem) {
+    this._items.push(item)
+    this._total = this.total()
+  }
+
+  removeItem(itemId: string) {
+    this._items = this._items.filter(item => item.id !== itemId)
+    this._total = this.total()
+  }
 }
